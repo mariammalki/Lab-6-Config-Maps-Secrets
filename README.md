@@ -1,4 +1,5 @@
 🧩 Lab 6 — Configuration avec ConfigMap et Secret (Flask + PostgreSQL sur K3s)
+
 🎯 Objectif
 
 Ce laboratoire a pour objectif de déployer une application web Flask connectée à une base de données PostgreSQL sur un cluster K3s, en utilisant ConfigMap et Secret pour gérer la configuration et les identifiants de manière sécurisée.
