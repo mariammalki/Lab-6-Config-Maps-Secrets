@@ -1,7 +1,9 @@
-Lab 6 — Configuration avec ConfigMap et Secret (Flask + PostgreSQL sur K3s)
-Objectif
+🧩 Lab 6 — Configuration avec ConfigMap et Secret (Flask + PostgreSQL sur K3s)
+🎯 Objectif
+
 Ce laboratoire a pour objectif de déployer une application web Flask connectée à une base de données PostgreSQL sur un cluster K3s, en utilisant ConfigMap et Secret pour gérer la configuration et les identifiants de manière sécurisée.
-Architecture
+
+🏗️ Architecture
 
 L’application est composée de deux parties :
 
@@ -36,42 +38,41 @@ lab6/
 └── README.md
 
 ⚙️ Étapes de déploiement
-
-1. Créer le ConfigMap et le Secret
+🧩 1. Créer le ConfigMap et le Secret
 kubectl apply -f k8s/configmap.yaml
 kubectl apply -f k8s/secret.yaml
 
- 2. Déployer la base de données
+🗄️ 2. Déployer la base de données
 kubectl apply -f k8s/db-deployment.yaml
 kubectl apply -f k8s/db-service.yaml
 
-3. Déployer l’application Flask
+🌐 3. Déployer l’application Flask
 kubectl apply -f k8s/web-deployment.yaml
 kubectl apply -f k8s/web-service.yaml
 
 🔍 Vérifications
-Voir les pods :
+📦 Voir les pods :
 kubectl get pods
 
-Voir les services :
+🌐 Voir les services :
 kubectl get svc
 
-Voir les logs de l’application :
+🪵 Voir les logs de l’application :
 kubectl logs -l app=web
 
-🌐 Accès à l’application
+🌍 Accès à l’application
 
 Récupère l’adresse IP du nœud :
 
 kubectl get nodes -o wide
 
 
-Ensuite ouvre ton navigateur sur :
+Ensuite, ouvre ton navigateur sur :
 
 http://<node-ip>:30081
 
 
-(Le port 30081 correspond au NodePort du service Flask.)
+💡 Le port 30081 correspond au NodePort du service Flask.
 
 🧪 Test de fonctionnement
 
@@ -102,4 +103,4 @@ L’application Flask démarre correctement.
 
 La connexion à PostgreSQL est établie via les variables du Secret et ConfigMap.
 
-Les données insérées via le formulaire apparaissent dans la base.
+Les données insérées via le formulaire apparaissent dans la base de données.
