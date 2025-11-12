@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: db-deployment
+  namespace: lab6
   labels:
     app: db
 spec:
@@ -34,3 +35,4 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: secret
+                  key: DB_PASSWORD
