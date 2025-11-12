@@ -29,6 +29,7 @@ lab6/
 │   └── requirements.txt
 │
 ├── k8s/
+|   |__ namespace.yaml
 │   ├── configmap.yaml
 │   ├── secret.yaml
 │   ├── db-deployment.yaml
@@ -39,26 +40,36 @@ lab6/
 └── README.md
 
 ⚙️ Étapes de déploiement
+
 🧩 1. Créer le ConfigMap et le Secret
+
 kubectl apply -f k8s/configmap.yaml
+
 kubectl apply -f k8s/secret.yaml
 
 🗄️ 2. Déployer la base de données
+
 kubectl apply -f k8s/db-deployment.yaml
+
 kubectl apply -f k8s/db-service.yaml
 
 🌐 3. Déployer l’application Flask
+
 kubectl apply -f k8s/web-deployment.yaml
+
 kubectl apply -f k8s/web-service.yaml
 
 🔍 Vérifications
+
 📦 Voir les pods :
 kubectl get pods
 
 🌐 Voir les services :
+
 kubectl get svc
 
 🪵 Voir les logs de l’application :
+
 kubectl logs -l app=web
 
 🌍 Accès à l’application
@@ -87,7 +98,10 @@ Les données sont enregistrées dans la base PostgreSQL.
 
 Pour vérifier :
 
-kubectl exec -it <db-pod-name> -- psql -U myuser -d mydb
+kubectl exec -it db pod -- /bin/bash
+
+psql -U $POSTGRES_USER -d $POSTGRES_DB
+
 SELECT * FROM users;
 
 🔐 Sécurité et configuration
