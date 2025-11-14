@@ -36,7 +36,7 @@ lab6/
 │   ├── db-service.yaml
 │   ├── web-deployment.yaml
 │   └── web-service.yaml
-│
+│__docs
 └── README.md
 
 ⚙️ Étapes de déploiement
