@@ -104,6 +104,9 @@ psql -U $POSTGRES_USER -d $POSTGRES_DB
 
 SELECT * FROM users;
 
+![Formulaire](docs/screenshots/test-lab6.png)
+
+
 🔐 Sécurité et configuration
 
 Les variables d’environnement (DB_HOST, DB_NAME, etc.) sont stockées dans un ConfigMap.
